@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Student Information</title>
+<style type="text/css">
+.h2_1{
+color: black;
+font-weight: bold;
+text-decoration: none;
+text-align: center;
+}
+form{
+	border: 3px solid #f1f1f1;
+}
+input[type=text] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+button{
+	background-color: black;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+button:hover{
+	opacity: 0.9;
+}
+.LoginDiv {
+	padding: 16px;
+}
+</style>
+<script type="text/javascript">
+function myFun(){
+	var flag = true;
+	var name = document.addData.studentName.value;
+	var subject = document.addData.subjectName.value;
+	var category = document.addData.category.value;
+	var date = document.addData.date.value;
+	var marks = document.addData.marks.value;
+
+	if(name == ""){
+		alert("Invalid student name!");
+		flag = false;
+	}
+	else if(subject == ""){
+		alert("Invalid subject name!");
+		flag = false;
+	}
+	else if(category == ""){
+		alert("Invalid category!");
+		flag = false;
+	}
+	else if(date == ""){
+		alert("Invalid date!");
+		flag = false;
+	}
+	else if(marks == ""){
+		alert("Invalid marks!");
+		flag = false;
+	}
+	else{
+		flag = true;
+	}
+	return flag;
+}
+</script>
+</head>
+<body style="background-color: buttonface;">
+	<div class = "h2_1">
+	<h1>Educational Institute Student Data Management System</h1>
+	</div>
+	<br>
+	<h2 style="text-align: center;">Add New Student Data</h2>
+	<br>
+	<form name="addData" action="AddStudent" method="post">
+		<div class="LoginDiv">
+
+			<label><b>Student Name</b></label> 
+			<input type="text" name="studentName" placeholder="Enter Student Name" /> 
+			
+			<label><b>Subject Name</b></label> 
+			<input type="text" name="subjectName" placeholder="Enter Subject Name" />
+
+			<label><b>Assignment Category</b></label> 
+			<input type="text" name="category" placeholder="Enter Category" /> 
+			
+			<label><b>Date of Submission</b></label> 
+			<input type="text" name="date" placeholder="Enter Subission Date" /> 
+			
+			<label><b>Marks</b></label>
+			<input type="text" name="marks" placeholder="Enter Marks" />
+
+			<button type="submit" onclick="return myFun()">Add Student</button>
+
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Wise Data</title>
+<style type="text/css">
+.h2_1{
+color: black;
+font-weight: bold;
+text-decoration: none;
+text-align: center;
+}
+.LoginDiv{
+padding: 16px;
+}
+button{
+	background-color: black;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+button:hover{
+	opacity: 0.9;
+}
+form{
+	border: 3px solid #f1f1f1;
+}
+input[type=text] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+</style>
+<script type = "text/javascript">
+function myFun(){
+	var flag = true;
+	var name = document.studentwise.studentName.value;
+
+	if(name == ""){
+		alert("Invalid student name!");
+		flag = false;
+	}
+	else{
+		flag = true;
+	}
+	return flag;
+}
+</script>
+</head>
+<body style="background-color: buttonface;">
+<div class = "h2_1">
+	<h1>Artha Educational Institute</h1>
+	</div>
+	<br>
+	<h2 style="text-align: center;">Student Wise Data</h2>
+	<br>
+<form name = "studentwise" action = "StudentWiseData" method="post">
+<div class = "LoginDiv">
+
+<label>Student Name</label> 
+<input type = "text"  name = "studentName" placeholder = "Enter Student Name" />
+
+<button type = "submit" onclick = "return myFun()">View Student Data</button>
+
+</div>
+</form>
+</body>
+</html>
